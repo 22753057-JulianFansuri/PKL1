@@ -37,24 +37,14 @@
             <th>No</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Phone</th>
-            <th>Class</th>
-            <th>Adrdress</th>
-            <th>Gender</th>
-            <th>Status</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($students as $index => $student)
+        @foreach ($users as $index => $user)
             <tr>
                 <td>{{ $index + 1 }}</td> <!-- Menampilkan nomor urut -->
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->email }}</td>
-                <td>{{ $student->phone }}</td>
-                <td>{{ $student->class }}</td>
-                <td>{{ $student->address }}</td>
-                <td>{{ $student->gender }}</td>
-                <td>{{ $student->status }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
             </tr>
         @endforeach
     </tbody>
