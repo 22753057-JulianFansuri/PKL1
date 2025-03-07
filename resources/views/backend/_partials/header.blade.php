@@ -330,14 +330,14 @@
                   >
                     <div class="avatar-sm">
                       <img
-                        src="../assets/img/profile.jpg"
+                        src="{{ url ('backend/assets/img/II.jfif') }}"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
                     </div>
                     <span class="profile-username">
                       <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
+                      <span class="fw-bold">Julian</span>
                     </span>
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -346,14 +346,14 @@
                         <div class="user-box">
                           <div class="avatar-lg">
                             <img
-                              src="../assets/img/profile.jpg"
+                              src="{{ url ('backend/assets/img/II.jfif') }}"
                               alt="image profile"
                               class="avatar-img rounded"
                             />
                           </div>
                           <div class="u-text">
-                            <h4>Hizrian</h4>
-                            <p class="text-muted">hello@example.com</p>
+                            <h4>Julian</h4>
+                            <p class="text-muted">julian@gmail.com</p>
                             <a
                               href="profile.html"
                               class="btn btn-xs btn-secondary btn-sm"
