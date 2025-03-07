@@ -52,10 +52,10 @@
 
                                     <td>
                                         <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST" id="delete-form-{{ $user->id }}" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Hapus</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $user->id }})">Hapus</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -67,4 +67,38 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('script')
+    <script>
+        function confirmDelete(userId) {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "User akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('delete-form-' + userId).submit();
+                }
+            })
+        }
+    </script>
+
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        </script>
+    @endif
 @endsection
