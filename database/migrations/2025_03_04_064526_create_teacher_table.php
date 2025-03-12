@@ -18,6 +18,7 @@
                 $table->string('phone');
                 $table->string('course');
                 $table->string('address');
+                $table->string('photo');
                 $table->enum('gender', ['L', 'P']);
                 $table->enum('status', ['Aktif', 'Tidak Aktif']);
                 $table->timestamps();

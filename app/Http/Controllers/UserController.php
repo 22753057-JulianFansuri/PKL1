@@ -21,6 +21,11 @@ class UserController extends Controller
         return view('backend.user.create');
     }   
 
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Store a newly created user in storage.
+
+/******  42bafe96-9725-4d52-bb50-deaa3d7c9e97  *******/
     public function store(Request $request)
     {
         $validatedData = $request->validate ([
